@@ -216,7 +216,15 @@ const admin = (): void => {
 
 /*----------------- user --------------------*/
 
-const filterCostFlights = (costFlights) => {
+const filterCostFlights = (
+  costFlights: {
+    id: number;
+    to: string;
+    from: string;
+    cost: number;
+    scale: boolean;
+  }[]
+) => {
   info("List of your filter flight 📋.");
   let minMaxPrice = prompt(
     "Type the exact price 🎯 that you are looking for: Eg. 200, or max/min"
